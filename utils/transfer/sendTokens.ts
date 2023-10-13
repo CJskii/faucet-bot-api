@@ -1,14 +1,11 @@
-const config = require(`../../config`);
-require("dotenv").config();
-
-const { executeZkSyncTransfer } = require("./networks/zksyncTransfer");
-const { executeStarknetTransfer } = require("./networks/starknetTransfer");
 const { executeStacksTransfer } = require("./networks/stacksTransfer");
 const { executeFlowTransfer } = require("./networks/flowTransfer");
 
 import { getConfigData } from "config";
 import { getPrivateKey } from "utils/getPrivateKey";
 import { executeEvmTransfer } from "./evm";
+import { executeZkSyncTransfer } from "./zksync";
+import { executeStarknetTransfer } from "./starknet";
 
 interface SendFaucetTokensArgs {
   network: string;
